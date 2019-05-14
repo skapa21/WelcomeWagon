@@ -32,6 +32,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         currentLocation = locations[0]
     }
 
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        
+        let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
+        pin.image = UIImage(named: "Wagon")
+        pin.canShowCallout = true
+        let button  = UIButton(type: .detailDisclosure)
+        pin.rightCalloutAccessoryView = button
+        return pin
+    }
 
 }
 
