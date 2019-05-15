@@ -33,6 +33,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     }
 
     
+   
+    @IBAction func whenRestaurantButtonPressed(_ sender: UIBarButtonItem) {
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = "Restaurant"
+        let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        request.region = MKCoordinateRegion(center: currentLocation.coordinate, span: span)
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            guard let response = response else { return }
+            for mapItem in response.mapItems {
+                self.pizzaPlace.append(mapItem)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = mapItem.placemark.coordinate
+                annotation.title = mapItem.name
+                self.mapView.addAnnotation(annotation)
+            }
+            
+        }
+        
+        
+    }
+    
+    
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         let pin = MKAnnotationView(annotation: annotation, reuseIdentifier: nil)
@@ -42,6 +65,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         pin.rightCalloutAccessoryView = button
         return pin
     }
-
+    
 }
 

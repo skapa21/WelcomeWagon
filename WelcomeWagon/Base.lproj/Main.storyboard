@@ -31,7 +31,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="RAx-Su-inu"/>
+                    <navigationItem key="navigationItem" id="RAx-Su-inu">
+                        <barButtonItem key="leftBarButtonItem" title="Closest Restaurant" id="AO3-1d-BJa">
+                            <connections>
+                                <action selector="whenRestaurantButtonPressed:" destination="BYZ-38-t0r" id="aLi-xA-A7C"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="04F-OY-FjT" id="Bbh-4O-gF1"/>
                     </connections>
