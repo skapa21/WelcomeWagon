@@ -32,14 +32,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="RAx-Su-inu">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="S5E-dL-M14">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="tyG-17-fjq">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Zoom"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Closest Restaurant" id="AO3-1d-BJa">
                             <connections>
-                                <action selector="zoomButtonTapped:" destination="BYZ-38-t0r" id="c6U-0c-7So"/>
+                                <action selector="whenRestaurantButtonPressed:" destination="BYZ-38-t0r" id="aLi-xA-A7C"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,7 +44,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2610" y="92"/>
+            <point key="canvasLocation" x="868" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3We-cT-bPQ">
@@ -67,7 +62,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZTX-29-uk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="622" y="99"/>
+            <point key="canvasLocation" x="169" y="134"/>
         </scene>
     </scenes>
 </document>
