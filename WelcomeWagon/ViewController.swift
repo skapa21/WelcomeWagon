@@ -20,6 +20,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         super.viewDidLoad()
         
         locationManager.delegate = self
+        mapView.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.startUpdatingLocation()
         
@@ -67,6 +68,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         return pin
     }
     @IBAction func zoomButtonTapped(_ sender: UIBarButtonItem) {
+        print("in zoom")
         let coordinateSpan = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
         let center = currentLocation.coordinate
         let region = MKCoordinateRegion(center: center, span: coordinateSpan)

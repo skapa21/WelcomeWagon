@@ -37,14 +37,9 @@
                                 <action selector="whenRestaurantButtonPressed:" destination="BYZ-38-t0r" id="aLi-xA-A7C"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="vaW-SX-nqq">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="o3f-9N-qeF">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Zoom"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" title="Zoom" id="OEg-NU-hTX">
                             <connections>
-                                <action selector="zoomButtonTapped:" destination="BYZ-38-t0r" id="TcE-Fi-Irx"/>
+                                <action selector="zoomButtonTapped:" destination="BYZ-38-t0r" id="q1t-Z2-5MD"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -54,7 +49,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="959" y="134"/>
+            <point key="canvasLocation" x="854" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3We-cT-bPQ">
