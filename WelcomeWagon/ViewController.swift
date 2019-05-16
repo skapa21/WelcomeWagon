@@ -39,6 +39,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBAction func whenRestaurantButtonPressed(_ sender: UIBarButtonItem) {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = "Restaurant"
+        request.naturalLanguageQuery = "Restaurant"
         let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
         request.region = MKCoordinateRegion(center: currentLocation.coordinate, span: span)
         let search = MKLocalSearch(request: request)
