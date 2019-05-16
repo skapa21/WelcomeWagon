@@ -32,7 +32,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="RAx-Su-inu">
-                        <barButtonItem key="leftBarButtonItem" title="Closest Restaurant" id="AO3-1d-BJa">
+                        <barButtonItem key="leftBarButtonItem" image="foodIcon" landscapeImage="foodIcon" id="AO3-1d-BJa">
                             <connections>
                                 <action selector="whenRestaurantButtonPressed:" destination="BYZ-38-t0r" id="aLi-xA-A7C"/>
                             </connections>
@@ -70,4 +70,7 @@
             <point key="canvasLocation" x="169" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="foodIcon" width="128" height="128"/>
+    </resources>
 </document>
