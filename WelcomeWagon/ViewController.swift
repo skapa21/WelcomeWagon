@@ -27,6 +27,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         locationManager.requestWhenInUseAuthorization()
         print(mapView.showsUserLocation)
         mapView.showsUserLocation = true
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -39,7 +40,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
     @IBAction func whenRestaurantButtonPressed(_ sender: UIBarButtonItem) {
         let request = MKLocalSearch.Request()
         request.naturalLanguageQuery = "Restaurant"
-        request.naturalLanguageQuery = "Restaurant"
+        let allAnnotations = self.mapView.annotations
+        self.mapView.removeAnnotations(allAnnotations)
+        
         let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
         request.region = MKCoordinateRegion(center: currentLocation.coordinate, span: span)
         let search = MKLocalSearch(request: request)
@@ -75,6 +78,32 @@ class ViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDele
         let region = MKCoordinateRegion(center: center, span: coordinateSpan)
         mapView.setRegion(region, animated: true)
     }
+    
+    @IBAction func whenTransportButtonTapped(_ sender: UIBarButtonItem) {
+        let allAnnotations = self.mapView.annotations
+    self.mapView.removeAnnotations(allAnnotations)
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = "Taxi"
+        
+        let span = MKCoordinateSpan(latitudeDelta: 0.03, longitudeDelta: 0.03)
+        request.region = MKCoordinateRegion(center: currentLocation.coordinate, span: span)
+        let search = MKLocalSearch(request: request)
+        search.start { (response, error) in
+            guard let response = response else { return }
+            for mapItem in response.mapItems {
+                self.pizzaPlace.append(mapItem)
+                let annotation = MKPointAnnotation()
+                annotation.coordinate = mapItem.placemark.coordinate
+                annotation.title = mapItem.name
+                self.mapView.addAnnotation(annotation)
+                
+            }
+            
+        }
+    }
+    
+    
+    
     
 }
 
